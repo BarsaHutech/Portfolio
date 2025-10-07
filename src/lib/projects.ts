@@ -1,9 +1,9 @@
 export type Project = {
-  slug: string
-  title: string
-  description: string
-  tags: string[]
-}
+  slug: string;
+  title: string;
+  description: string;
+  tags: string[];
+};
 
 export const projects: Project[] = [
   {
@@ -24,10 +24,8 @@ export const projects: Project[] = [
     description: "Lightning-fast marketing site with MDX blog.",
     tags: ["MDX", "Animations", "Accessibility"],
   },
-]
+];
 
 export function getProject(slug: string): Project | undefined {
-  return projects.find(p => p.slug === slug)
+  return projects.find((p) => p.slug === slug);
 }
-
-

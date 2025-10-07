@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { notFound } from "next/navigation"
-import { getProject } from "@/lib/projects"
-import { motion } from "framer-motion"
+import { notFound } from "next/navigation";
+import { getProject } from "@/lib/projects";
+import { motion } from "framer-motion";
 
-type PageProps = { params: { slug: string } }
+type PageProps = { params: { slug: string } };
 
 export default function CaseStudyPage({ params }: PageProps) {
-  const project = getProject(params.slug)
-  if (!project) return notFound()
+  const project = getProject(params.slug);
+  if (!project) return notFound();
   return (
     <section className="mx-auto max-w-3xl px-4 py-16">
       <motion.h1
@@ -22,12 +22,10 @@ export default function CaseStudyPage({ params }: PageProps) {
       <p className="text-muted-foreground mb-8">{project.description}</p>
       <div className="prose dark:prose-invert">
         <p>
-          Problem → process → results. Replace this with your detailed case study
-          including metrics, screenshots, and learnings.
+          Problem → process → results. Replace this with your detailed case
+          study including metrics, screenshots, and learnings.
         </p>
       </div>
     </section>
-  )
+  );
 }
-
-

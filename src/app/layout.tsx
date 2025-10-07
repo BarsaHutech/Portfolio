@@ -21,7 +21,9 @@ export const metadata: Metadata = {
     template: "%s — Barsa Priyadarshini Jena",
   },
   description: "Portfolio, services, and case studies.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001"
+  ),
   openGraph: {
     title: "Barsa Priyadarshini Jena — Portfolio",
     description: "Portfolio, services, and case studies.",
@@ -42,12 +44,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <AppProviders>
           <Header />
-          <main className="min-h-[calc(100vh-7rem)]">
-            {children}
-          </main>
+          <main className="min-h-[calc(100vh-7rem)]">{children}</main>
           <Footer />
         </AppProviders>
       </body>

@@ -10,6 +10,19 @@ npm run dev
 yarn dev
 # or
 pnpm dev
+
+## Environment
+
+Create a `.env.local` file with:
+
+```
+
+NEXT_PUBLIC_SITE_URL=http://localhost:3001
+RESEND_API_KEY=your_resend_key
+CONTACT_TO_EMAIL=your@email.com
+
+```
+
 # or
 bun dev
 ```

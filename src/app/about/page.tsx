@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   return (
@@ -15,12 +15,13 @@ export default function AboutPage() {
       </motion.h1>
       <div className="space-y-4 text-muted-foreground">
         <p>
-          I’m Barsa Priyadarshini Jena, a frontend engineer and designer focused on
-          building fast, accessible, and beautifully animated web experiences.
+          I’m Barsa Priyadarshini Jena, a frontend engineer and designer focused
+          on building fast, accessible, and beautifully animated web
+          experiences.
         </p>
         <p>
-          Skilled in Next.js, Tailwind, and motion design. I partner with startups to
-          ship results quickly and thoughtfully.
+          Skilled in Next.js, Tailwind, and motion design. I partner with
+          startups to ship results quickly and thoughtfully.
         </p>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -36,15 +37,25 @@ export default function AboutPage() {
             "Framer Motion",
             "R3F",
             "Accessibility",
-          ].map((s) => (
-            <div key={s} className="rounded-md border border-black/10 dark:border-white/10 px-3 py-2 text-sm hover:-translate-y-0.5 hover:shadow transition-all">
+          ].map((s, i) => (
+            <motion.div
+              key={s}
+              className="rounded-md border border-black/10 dark:border-white/10 px-3 py-2 text-sm hover:-translate-y-0.5 hover:shadow transition-all cursor-pointer"
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "rgba(147, 51, 234, 0.1)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
+            >
               {s}
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-
-

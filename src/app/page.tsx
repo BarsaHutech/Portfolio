@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { HeroCanvas } from "@/components/hero/HeroCanvas";
+import { LogoMarquee } from "@/components/home/LogoMarquee";
+import { Testimonials } from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -24,7 +26,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="text-muted-foreground text-lg"
           >
-            I help startups and brands ship fast, accessible, and beautiful websites that convert.
+            I help startups and brands ship fast, accessible, and beautiful
+            websites that convert.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -49,6 +52,8 @@ export default function Home() {
           <HeroCanvas />
         </motion.div>
       </div>
+      <LogoMarquee />
+      <Testimonials />
     </section>
   );
 }
